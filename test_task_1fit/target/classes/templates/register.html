@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>1FIT Web App</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<div>
+    <div th:insert="fragments/nav :: nav"></div>
+    <div class="text-light" style="background-image: url('https://source.unsplash.com/1920x1080/?nature');
+                                   position: absolute;
+                                   left: 0;
+                                   top: 0;
+                                   opacity: 0.6;
+                                   z-index: -1;
+                                   min-height: 100vh;
+                                   min-width: 100vw;">
+    </div>
+</div>
+
+<form action="#" th:action="@{/registerUser}" th:object="${user}" method="post">
+<input type="text" placeholder="Full name" name="fullName">
+<input type="text" placeholder="Username" name="username">
+<input type="password" placeholder="Password" name="password">
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>
